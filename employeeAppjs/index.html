@@ -2,20 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../employeeAppjs/index.css" />
-    <title>Employee pay roll app</title>
+    <title>Employee Payroll Form</title>
   </head>
+
   <body>
-    <!-- uc 1 -->
+    <!-- UC 1 -->
     <header class="header-content header">
       <div class="logo-content">
-        <img src="../employeeAppjs/assests/logo.png" alt="logo" />
+        <img src="../employeeAppjs/assests/logo.png" alt="Logo" />
         <div>
           <span class="emp-text">EMPLOYEE</span><br />
           <span class="emp-text emp-payroll">PAYROLL</span>
@@ -23,8 +23,14 @@
       </div>
     </header>
     <!-- UC 2 -->
-    <div class="form-content" id="formid">
-      <form class="form" action="#" onsubmit="save(); return false">
+    <div class="form-content">
+      <form
+        class="form"
+        name="emp"
+        action="#"
+        onreset="resetForm()"
+        onsubmit="save()"
+      >
         <div class="form-head">Employee Payroll Form</div>
         <div class="row-content">
           <label class="label text" for="name">Name</label>
@@ -33,14 +39,14 @@
             type="text"
             id="name"
             name="name"
-            placeholder="Your name.."
+            placeholder="Name"
             required
           />
-          <error-output class="text-error" for="text"></error-output>
+          <error-output class="text-error" for="text"> </error-output>
         </div>
         <!-- UC 3 -->
         <div class="row-content">
-          <label class="label text" for="profile">Profile image</label>
+          <label class="label text" for="profile">Profile picture</label>
           <div class="profile-radio-content">
             <label>
               <input
@@ -51,10 +57,9 @@
                 required
               />
               <img
-                src="../employeeAppjs/profile-images/Ellipse -3.png"
                 class="profile"
                 id="image1"
-                alt="profile3"
+                src="../employeeAppjs/profile-images/Ellipse -3.png"
               />
             </label>
             <label>
@@ -105,18 +110,19 @@
         <div class="row-content">
           <label class="label text" for="gender">Gender</label>
           <div>
-            <input type="radio" id="male" name="gender" value="Male" required />
+            <input type="radio" id="male" name="gender" value="male" required />
             <label class="text" for="male">Male</label>
             <input
               type="radio"
               id="female"
               name="gender"
-              value="Female"
+              value="female"
               required
             />
             <label class="text" for="female">Female</label>
           </div>
         </div>
+        <!-- uc 4 -->
         <div class="row-content">
           <label class="label text" for="department">Department</label>
           <div>
@@ -151,7 +157,7 @@
               name="department"
               value="Engineer"
             />
-            <label class="text" for="er">Engineer</label>
+            <label class="text" for="engineer">Engineer</label>
             <input
               class="checkbox"
               type="checkbox"
@@ -162,35 +168,35 @@
             <label class="text" for="others">Others</label>
           </div>
         </div>
+        <!-- UC 4 -->
         <div class="row-content">
-          <label class="label text" for="salary">Salary</label>
+          <label class="label text" for="salary">Your salary:</label>
           <input
             class="input"
             type="range"
             name="salary"
             id="salary"
-            min="300000"
-            max="500000"
+            min="30000"
+            max="50000"
             step="100"
-            value="400000"
+            value="40000"
           />
-          <output class="salary-output text" for="salary">400000</output>
+          <output class="salary-output text" for="salary">40000</output>
         </div>
         <!-- UC 5 -->
         <div class="row-content">
-          <label class="label text" for="startDate">Start Date</label>
+          <label class="label text" for="startDate">Start date</label>
           <div>
             <select id="day" name="Day">
-              <option value="Day">Day</option>
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04">04</option>
-              <option value="05">05</option>
-              <option value="06">06</option>
-              <option value="07">07</option>
-              <option value="08">08</option>
-              <option value="09">09</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
               <option value="10">10</option>
               <option value="11">11</option>
               <option value="12">12</option>
@@ -215,22 +221,20 @@
               <option value="31">31</option>
             </select>
             <select id="month" name="Month">
-              <option value="Month">Month</option>
-              <option value="01">January</option>
-              <option value="02">February</option>
-              <option value="03">March</option>
-              <option value="04">April</option>
-              <option value="05">May</option>
-              <option value="06">June</option>
-              <option value="07">July</option>
-              <option value="08">August</option>
-              <option value="09">September</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
               <option value="10">October</option>
               <option value="11">November</option>
               <option value="12">December</option>
             </select>
             <select id="year" name="Year">
-              <option value="Year">Year</option>
               <option value="2020">2020</option>
               <option value="2019">2019</option>
               <option value="2018">2018</option>
@@ -239,20 +243,23 @@
             </select>
           </div>
         </div>
-        <!-- uc 6 -->
+        <error-output class="date-error" for="text"> </error-output>
+        <!-- UC 6 -->
         <div class="row-content">
           <label class="label text" for="notes">Notes</label>
           <textarea
             id="notes"
             class="input"
             name="Notes"
+            placeholder=""
             style="height: 100px"
-          ></textarea>
+          >
+          </textarea>
         </div>
         <div class="button-content">
-          <a href="./index.html" class="resetButton button cancelButton"
-            >Cancel</a
-          >
+          <button type="cancel" class="resetButton button cancelButton">
+            Cancel
+          </button>
           <div class="submit-reset">
             <button type="submit" class="button submitButton" id="submitButton">
               Submit
@@ -262,7 +269,7 @@
         </div>
       </form>
     </div>
-    <script src="../employeeAppjs/js/validate.js"></script>
-    <script src="../employeeAppjs/js/PayrollModel.js"></script>
   </body>
+  <script src="../employeeAppjs/js/Employee_Payroll.js"></script>
+  <script src="../employeeAppjs/js/Form.js"></script>
 </html>
