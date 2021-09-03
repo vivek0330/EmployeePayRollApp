@@ -68,3 +68,36 @@ function save() {
 function resetForm() {
   document.getElementById("emp-form").reset();
 }
+
+function getSelectedValues(attribute) {
+  let allItems = document.querySelectorAll(attribute);
+  let selItems = [];
+  allItems.forEach((item) => {
+    if (item.checked) selItems.push(item.value);
+  });
+  return selItems;
+}
+
+function getInputValueById(id) {
+  let value = document.querySelector(id).value;
+  return value;
+}
+function getElementValueById(id) {
+  let value = document.getElementById(id).value;
+  return value;
+}
+function createAndUpdateStorage(employeepayrollData) {
+  let employeePayrollList = JSON.parse(
+    localStorage.getItem("EmployeePayrollList")
+  );
+  if (employeePayrollList != undefined) {
+    employeePayrollList.push(employeepayrollData);
+  } else {
+    employeePayrollList = [employeepayrollData];
+  }
+  alert("Added Object to the local Storage" + employeePayrollList.toString());
+  localStorage.setItem(
+    "EmployeePayrollList",
+    JSON.stringify(employeePayrollList)
+  );
+}
